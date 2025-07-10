@@ -1,1 +1,47 @@
+from web3 import Web3
+import json
 
+# ------------------------------
+# 1) Conexión a Ganache local
+# ------------------------------
+web3 = Web3(Web3.HTTPProvider("http://127.0.0.1:7545"))
+assert web3.is_connected(), "No se pudo conectar a Ganache"
+
+# ------------------------------
+# 2) Cargar contrato
+# ------------------------------
+direccion_contrato = '0xAbC1234567890Def1234567890aBCDef12345678'
+
+with open('VotacionABI.json', 'r') as f:
+    abi = json.load(f)
+
+contrato = web3.eth.contract(address=direccion_contrato, abi=abi)
+
+# ------------------------------
+# 3) Parámetros de prueba
+# ------------------------------
+cuentas = web3.eth.accounts
+num_intentos = 10000
+rechazos = 0
+votos_aceptados = 0
+
+print(f" Simulando {num_intentos} intentos para medir Tasa de Rechazo de Votos Duplicados o Inválidos...")
+
+for i in range(num_intentos):
+    try:
+        # Fuerza intentos de doble voto: la misma cuenta repetida
+        cuenta = cuentas[0]  # Siempre la misma → duplicados garantizados después del primer voto
+        tx_hash = contrato.functions.votar(1).transact({'from': cuenta})
+        web3.eth.wait_for_transaction_receipt(tx_hash)
+        votos_aceptados += 1
+    except Exception as e:
+        rechazos += 1
+
+# ------------------------------
+# 4) Calcular tasa de rechazo
+# ------------------------------
+tasa_rechazo = (rechazos / num_intentos) * 100
+
+print(f"\n Votos aceptados: {votos_aceptados}")
+print(f" Votos duplicados o inválidos rechazados: {rechazos}")
+print(f" Tasa de Rechazo de Votos Duplicados o Inválidos: {tasa_rechazo:.2f}%")
