@@ -24,7 +24,7 @@ contrato = web3.eth.contract(address=direccion_contrato, abi=abi)
 cuentas = web3.eth.accounts
 cuenta_prueba = cuentas[0]  # Usar siempre la misma
 
-print("🕵️ Ejecutando prueba de detección de anomalía (doble voto)...")
+print(" Ejecutando prueba de detección de anomalía (doble voto)...")
 
 # ------------------------------
 # 4) Emitir voto válido (1ra vez)
@@ -48,7 +48,7 @@ try:
 except Exception as e:
     fin = time.time()
     tiempo_deteccion = fin - inicio
-    print(f"⏱️ Tiempo de detección de la anomalía: {tiempo_deteccion:.4f} segundos")
+    print(f" Tiempo de detección de la anomalía: {tiempo_deteccion:.4f} segundos")
 
 # ------------------------------
 # 6) Interpretación
