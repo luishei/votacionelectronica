@@ -5,8 +5,8 @@ import json
 web3 = Web3(Web3.HTTPProvider("http://127.0.0.1:7545"))
 assert web3.is_connected(), "No se pudo conectar a Ganache"
 
-# Dirección del contrato desplegado (ajusta la tuya)
-direccion_contrato = '0xAbC1234567890Def1234567890aBCDef12345678'
+# Dirección del contrato desplegado
+direccion_contrato = '0xEe9E39e3780a4b9407c98194f52b6D3ae20F2754'
 
 # Cargar ABI del contrato
 with open('VotacionABI.json', 'r') as f:
