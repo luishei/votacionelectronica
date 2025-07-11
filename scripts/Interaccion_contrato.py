@@ -5,7 +5,7 @@ import json
 web3 = Web3(Web3.HTTPProvider("http://127.0.0.1:7545"))
 
 # Dirección del contrato y del usuario
-direccion_contrato = '0x...TU_DIRECCION_DE_CONTRATO...'
+direccion_contrato = '0xEe9E39e3780a4b9407c98194f52b6D3ae20F2754'
 direccion_usuario = web3.eth.accounts[0]
 
 # ABI del contrato
