@@ -12,7 +12,7 @@ assert web3.is_connected(), "No se pudo conectar a Ganache"
 # ------------------------------
 # 2) Cargar contrato
 # ------------------------------
-direccion_contrato = '0xAbC1234567890Def1234567890aBCDef12345678'
+direccion_contrato = '0xEe9E39e3780a4b9407c98194f52b6D3ae20F2754'
 
 with open('VotacionABI.json', 'r') as f:
     abi = json.load(f)
