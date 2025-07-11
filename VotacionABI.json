@@ -1,0 +1,71 @@
+
+[
+{
+    "inputs": [
+    {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+    }
+    ],
+    "name": "haVotado",
+    "outputs": [
+    {
+        "internalType": "bool",
+        "name": "",
+        "type": "bool"
+    }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+},
+{
+    "inputs": [
+    {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+    }
+    ],
+    "name": "votos",
+    "outputs": [
+    {
+        "internalType": "address",
+        "name": "votante",
+        "type": "address" },
+    {
+        "internalType": "uint256",
+        "name": "candidato",
+        "type": "uint256"
+    }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+},
+{
+    "inputs": [
+    {
+        "internalType": "uint256",
+        "name": "_candidato",
+        "type": "uint256"
+    }
+    ],
+    "name": "votar",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+},
+{
+    "inputs": [],
+    "name": "totalVotos",
+    "outputs": [
+    {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+    }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+}
+]
