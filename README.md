@@ -30,3 +30,4 @@ Este repositorio contiene simulaciones del proyecto **"Modelo para garantizar la
 ## 🗂️ Licencia
 
 Este proyecto es de uso académico para demostrar viabilidad técnica y operativa de sistemas de votación Blockchain en Ecuador.
+![Licencia](https://github.com/luishei/votacionelectronica/blob/main/logo.png?raw=true)
